@@ -3,13 +3,14 @@ package service
 import (
 	"helloworld/model"
 
+	"github.com/forbearing/golib/service"
 	"github.com/forbearing/golib/types"
 )
 
-func (u *user) Create(ctx *types.ServiceContext, req *model.User) (*model.User, error) {
+func (u *user) Create(ctx *types.ServiceContext, req *model.User) (rsp *model.User, err error) {
 	log := u.WithServiceContext(ctx, ctx.GetPhase())
 	log.Info("user create")
-	return &model.User{}, nil
+	return rsp, nil
 }
 
 func (u *user) CreateBefore(ctx *types.ServiceContext, user *model.User) error {
