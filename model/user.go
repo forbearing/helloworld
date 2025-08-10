@@ -15,5 +15,11 @@ type User struct {
 func (User) Design() {
 	Create(func() {
 		Enabled(true)
+		Payload[User]()
+		Result[User]()
+	})
+
+	List(func() {
+		Enabled(true)
 	})
 }

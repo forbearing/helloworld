@@ -3,7 +3,6 @@ package service
 import (
 	"helloworld/model"
 
-	"github.com/forbearing/golib/service"
 	"github.com/forbearing/golib/types"
 )
 
