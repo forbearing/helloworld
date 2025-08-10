@@ -44,4 +44,4 @@ temp/
 dist/
 build/
 
-golib
+internal/golib
