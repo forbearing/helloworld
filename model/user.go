@@ -21,7 +21,7 @@ type UserRsp struct {
 }
 
 func (User) Design() {
-	Enabled(false)
+	// Enabled(false)
 	Endpoint("user2")
 
 	Create(func() {
