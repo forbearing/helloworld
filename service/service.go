@@ -5,6 +5,14 @@ import (
 )
 
 func Init() error {
-	service.Register[*user]()
+	service.Register[*userCreator]()
+	service.Register[*userDeleter]()
+	service.Register[*userUpdater]()
+	service.Register[*userLister]()
+	service.Register[*userGetter]()
+	service.Register[*userManyCreator]()
+	service.Register[*userManyDeleter]()
+	service.Register[*userManyUpdater]()
+	service.Register[*userManyPatcher]()
 	return nil
 }

@@ -21,15 +21,37 @@ type UserRsp struct {
 }
 
 func (User) Design() {
+	Endpoint("user2")
+
 	Create(func() {
 		Enabled(true)
-		Payload[User]()
-		Result[User]()
+		// Payload[User]()
+		// Result[User]()
 		// Payload[UserReq]()
 		// Result[UserRsp]()
 	})
-
+	Delete(func() {
+		Enabled(true)
+	})
+	Update(func() {
+		Enabled(true)
+	})
 	List(func() {
-		Enabled(false)
+		Enabled(true)
+	})
+	Get(func() {
+		Enabled(true)
+	})
+	CreateMany(func() {
+		Enabled(true)
+	})
+	DeleteMany(func() {
+		Enabled(true)
+	})
+	UpdateMany(func() {
+		Enabled(true)
+	})
+	PatchMany(func() {
+		Enabled(true)
 	})
 }
