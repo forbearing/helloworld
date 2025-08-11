@@ -22,7 +22,7 @@ type UserRsp struct {
 
 func (User) Design() {
 	// Enabled(false)
-	Endpoint("user2")
+	Endpoint("user")
 
 	Create(func() {
 		Enabled(true)
