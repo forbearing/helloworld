@@ -1,4 +1,4 @@
-package service
+package user
 
 import (
 	"helloworld/model"
@@ -7,23 +7,23 @@ import (
 	"github.com/forbearing/golib/types"
 )
 
-type userManyDeleter struct {
+type ManyDeleter struct {
 	service.Base[*model.User, *model.User, *model.User]
 }
 
-func (u *userManyDeleter) DeleteMany(ctx *types.ServiceContext, req *model.User) (rsp *model.User, err error) {
+func (u *ManyDeleter) DeleteMany(ctx *types.ServiceContext, req *model.User) (rsp *model.User, err error) {
 	log := u.WithServiceContext(ctx, ctx.GetPhase())
 	log.Info("user delete many")
 	return rsp, nil
 }
 
-func (u *userManyDeleter) DeleteManyBefore(ctx *types.ServiceContext, users ...*model.User) error {
+func (u *ManyDeleter) DeleteManyBefore(ctx *types.ServiceContext, users ...*model.User) error {
 	log := u.WithServiceContext(ctx, ctx.GetPhase())
 	log.Info("user delete many before")
 	return nil
 }
 
-func (u *userManyDeleter) DeleteManyAfter(ctx *types.ServiceContext, users ...*model.User) error {
+func (u *ManyDeleter) DeleteManyAfter(ctx *types.ServiceContext, users ...*model.User) error {
 	log := u.WithServiceContext(ctx, ctx.GetPhase())
 	log.Info("user delete many after")
 	return nil
