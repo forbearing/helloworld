@@ -6,8 +6,8 @@ import (
 )
 
 type User struct {
-	Name string `json:"name"`
-	Age  int    `json:"age"`
+	Name string `json:"name"` // 用户名
+	Age  int    `json:"age"`  // 用户年龄
 
 	model.Base
 }
@@ -21,8 +21,8 @@ type UserRsp struct {
 }
 
 func (User) Design() {
-	// Enabled(false)
-	Endpoint("user")
+	Enabled(false)
+	// Endpoint("user")
 
 	Create(func() {
 		Enabled(true)
