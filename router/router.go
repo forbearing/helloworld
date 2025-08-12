@@ -12,7 +12,7 @@ import (
 func Init() error {
 	router.Register[*cmdb.DNS, *cmdb.DNS, *cmdb.DNS](router.API(), "cmdb/dns", consts.List)
 	router.Register[*cmdb.Machine, *cmdb.Machine, *cmdb.Machine](router.API(), "cmdb/machine", consts.List)
-	router.Register[*model.Group, *model.GroupReq, *model.GroupRsp](router.API(), "group", consts.Create)
+	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.Create)
 	router.Register[*model.Group, *model.GroupReq, *model.GroupRsp](router.API(), "group", consts.Delete)
 	router.Register[*model.Group, *model.GroupReq, *model.GroupRsp](router.API(), "group", consts.Update)
 	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.Patch)
