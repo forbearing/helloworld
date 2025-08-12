@@ -6,6 +6,7 @@ import (
 	"helloworld/model/setting"
 	"helloworld/typex"
 
+	. "github.com/forbearing/golib/dsl"
 	pkgmodel "github.com/forbearing/golib/model"
 
 	"gorm.io/datatypes"
@@ -43,4 +44,10 @@ type DNS struct {
 	Region       *setting.Region  `json:"region,omitempty" gorm:"-"`
 
 	pkgmodel.Base
+}
+
+func (DNS) Design() {
+	List(func() {
+		Enabled(true)
+	})
 }

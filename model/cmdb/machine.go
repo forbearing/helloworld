@@ -4,6 +4,7 @@ import (
 	"helloworld/model/setting"
 
 	"github.com/forbearing/golib/database"
+	. "github.com/forbearing/golib/dsl"
 	"github.com/forbearing/golib/model"
 )
 
@@ -29,6 +30,12 @@ type Machine struct {
 	Vendor      *setting.Vendor  `json:"vendor,omitempty" gorm:"-"`
 
 	model.Base
+}
+
+func (Machine) Design() {
+	List(func() {
+		Enabled(true)
+	})
 }
 
 func (m *Machine) GetAfter() error  { return m.expendFields() }

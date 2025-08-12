@@ -1,6 +1,8 @@
 package service
 
 import (
+	"helloworld/service/cmdb/dns"
+	"helloworld/service/cmdb/machine"
 	"helloworld/service/group"
 	"helloworld/service/setting/project"
 	"helloworld/service/setting/region"
@@ -11,6 +13,8 @@ import (
 )
 
 func Init() error {
+	service.Register[*dns.Lister](consts.PHASE_LIST)
+	service.Register[*machine.Lister](consts.PHASE_LIST)
 	service.Register[*group.Creator](consts.PHASE_CREATE)
 	service.Register[*group.Deleter](consts.PHASE_DELETE)
 	service.Register[*group.Updater](consts.PHASE_UPDATE)

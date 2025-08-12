@@ -2,6 +2,7 @@ package router
 
 import (
 	"helloworld/model"
+	"helloworld/model/cmdb"
 	"helloworld/model/setting"
 
 	"github.com/forbearing/golib/router"
@@ -9,6 +10,8 @@ import (
 )
 
 func Init() error {
+	router.Register[*cmdb.DNS, *cmdb.DNS, *cmdb.DNS](router.API(), "cmdb/dns", consts.List)
+	router.Register[*cmdb.Machine, *cmdb.Machine, *cmdb.Machine](router.API(), "cmdb/machine", consts.List)
 	router.Register[*model.Group, *model.GroupReq, *model.GroupRsp](router.API(), "group", consts.Create)
 	router.Register[*model.Group, *model.GroupReq, *model.GroupRsp](router.API(), "group", consts.Delete)
 	router.Register[*model.Group, *model.GroupReq, *model.GroupRsp](router.API(), "group", consts.Update)
@@ -19,11 +22,11 @@ func Init() error {
 	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.DeleteMany)
 	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.UpdateMany)
 	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.PatchMany)
-	router.Register[*setting.Project, *setting.Project, *setting.Project](router.API(), "project", consts.Create)
-	router.Register[*setting.Project, *setting.Project, *setting.Project](router.API(), "project", consts.Delete)
-	router.Register[*setting.Project, *setting.Project, *setting.Project](router.API(), "project", consts.Update)
-	router.Register[*setting.Region, *setting.Region, *setting.Region](router.API(), "region", consts.Create)
-	router.Register[*setting.Region, *setting.Region, *setting.Region](router.API(), "region", consts.List)
+	router.Register[*setting.Project, *setting.Project, *setting.Project](router.API(), "setting/project", consts.Create)
+	router.Register[*setting.Project, *setting.Project, *setting.Project](router.API(), "setting/project", consts.Delete)
+	router.Register[*setting.Project, *setting.Project, *setting.Project](router.API(), "setting/project", consts.Update)
+	router.Register[*setting.Region, *setting.Region, *setting.Region](router.API(), "setting/region", consts.Create)
+	router.Register[*setting.Region, *setting.Region, *setting.Region](router.API(), "setting/region", consts.List)
 	router.Register[*model.User, *model.User, *model.User](router.API(), "user", consts.Create)
 	router.Register[*model.User, *model.User, *model.User](router.API(), "user", consts.Delete)
 	router.Register[*model.User, *model.User, *model.User](router.API(), "user", consts.Update)
