@@ -18,7 +18,7 @@ func (g *Deleter) Delete(ctx *types.ServiceContext, req *model.GroupReq) (rsp *m
 		return nil, err
 	}
 
-	if err = database.Database[*model.Group]().Delete(list...); err != nil {
+	if err = database.Database[*model.Group]().WithPurge(true).Delete(list...); err != nil {
 		return nil, err
 	}
 
