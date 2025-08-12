@@ -2,6 +2,7 @@ package router
 
 import (
 	"helloworld/model"
+	"helloworld/model/setting"
 
 	"github.com/forbearing/golib/router"
 	"github.com/forbearing/golib/types/consts"
@@ -18,6 +19,7 @@ func Init() error {
 	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.DeleteMany)
 	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.UpdateMany)
 	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.PatchMany)
+	router.Register[*setting.Project, *setting.Project, *setting.Project](router.API(), "project", consts.Create)
 	router.Register[*model.User, *model.User, *model.User](router.API(), "user", consts.Create)
 	router.Register[*model.User, *model.User, *model.User](router.API(), "user", consts.Delete)
 	router.Register[*model.User, *model.User, *model.User](router.API(), "user", consts.Update)

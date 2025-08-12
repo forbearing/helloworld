@@ -14,7 +14,6 @@ type Updater struct {
 
 func (g *Updater) Update(ctx *types.ServiceContext, req *model.GroupReq) (rsp *model.GroupRsp, err error) {
 	log := g.WithServiceContext(ctx, ctx.GetPhase())
-
 	log.Info("group update")
 	pretty.Println(req)
 	return rsp, nil
