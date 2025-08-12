@@ -1,4 +1,4 @@
-package model
+package typex
 
 type Env string
 

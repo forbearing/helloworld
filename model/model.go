@@ -1,6 +1,7 @@
 package model
 
 import (
+	"helloworld/model/cmdb"
 	"helloworld/model/setting"
 
 	"github.com/forbearing/golib/model"

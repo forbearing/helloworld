@@ -3,8 +3,8 @@ package cmdb
 import (
 	"time"
 
-	"helloworld/model"
 	"helloworld/model/setting"
+	"helloworld/typex"
 
 	pkgmodel "github.com/forbearing/golib/model"
 
@@ -12,7 +12,7 @@ import (
 )
 
 type DNS struct {
-	Env      model.Env `json:"env,omitempty" schema:"env"`
+	Env      typex.Env `json:"env,omitempty" schema:"env"`
 	TenantId string    `json:"tenant_id,omitempty" schema:"tenant_id"`
 	Domain   string    `json:"domain,omitempty" schema:"domain"`
 
