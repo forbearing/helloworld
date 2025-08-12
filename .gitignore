@@ -45,3 +45,5 @@ dist/
 build/
 
 internal/golib
+# Ignore hidden golang code.
+**/.*.go

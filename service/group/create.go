@@ -1,6 +1,8 @@
 package group
 
 import (
+	"fmt"
+
 	"helloworld/model"
 
 	"github.com/forbearing/golib/service"
@@ -12,19 +14,14 @@ type Creator struct {
 }
 
 func (g *Creator) Create(ctx *types.ServiceContext, req *model.Group) (rsp *model.Group, err error) {
-	log := g.WithServiceContext(ctx, ctx.GetPhase())
-	log.Info("group create")
 	return rsp, nil
 }
 
 func (g *Creator) CreateBefore(ctx *types.ServiceContext, group *model.Group) error {
-	log := g.WithServiceContext(ctx, ctx.GetPhase())
-	log.Info("group create before")
 	return nil
 }
 
 func (g *Creator) CreateAfter(ctx *types.ServiceContext, group *model.Group) error {
-	log := g.WithServiceContext(ctx, ctx.GetPhase())
-	log.Info("group create after")
+	fmt.Println("g.Logger is nil", g.Logger == nil)
 	return nil
 }

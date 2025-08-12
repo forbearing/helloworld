@@ -25,12 +25,23 @@ func (g *Group) MarshalLogObject(enc zapcore.ObjectEncoder) error {
 	return nil
 }
 
+type GroupReq struct {
+	Name string `json:"name,omitempty" schema:"name"`
+}
+type GroupResp struct {
+	NameCustom string `json:"custom_name,omitempty" schema:"custom_name"`
+	DescCustom string `json:"custom_desc,omitempty" schema:"custom_desc"`
+	Count      string `json:"custom_count,omitempty" schema:"custom_count"`
+}
+
 func (Group) Design() {
 	// Enabled(false)
 
-	// Create(func() {
-	// 	Enabled(true)
-	// })
+	Create(func() {
+		Enabled(true)
+		// Payload[GroupReq]()
+		// Result[GroupResp]()
+	})
 	// Delete(func() {
 	// 	Enabled(true)
 	// })
@@ -40,16 +51,16 @@ func (Group) Design() {
 	// Patch(func() {
 	// 	Enabled(true)
 	// })
-	// List(func() {
-	// 	Enabled(true)
-	// })
+	List(func() {
+		Enabled(true)
+	})
 	Get(func() {
 		Enabled(true)
 	})
 
-	CreateMany(func() {
-		Enabled(true)
-	})
+	// CreateMany(func() {
+	// 	Enabled(true)
+	// })
 
 	// DeleteMany(func() {
 	// 	Enabled(true)
