@@ -74,4 +74,11 @@ func (Group) Design() {
 	PatchMany(func() {
 		Enabled(true)
 	})
+	Import(func() {
+		Enabled(true)
+	})
+
+	Export(func() {
+		Enabled(true)
+	})
 }

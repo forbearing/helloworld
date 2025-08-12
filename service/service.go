@@ -25,6 +25,8 @@ func Init() error {
 	service.Register[*group.ManyDeleter](consts.PHASE_DELETE_MANY)
 	service.Register[*group.ManyUpdater](consts.PHASE_UPDATE_MANY)
 	service.Register[*group.ManyPatcher](consts.PHASE_PATCH_MANY)
+	service.Register[*group.Importer](consts.PHASE_IMPORT)
+	service.Register[*group.Exporter](consts.PHASE_EXPORT)
 	service.Register[*project.Creator](consts.PHASE_CREATE)
 	service.Register[*project.Deleter](consts.PHASE_DELETE)
 	service.Register[*project.Updater](consts.PHASE_UPDATE)

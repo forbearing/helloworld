@@ -22,6 +22,8 @@ func Init() error {
 	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.DeleteMany)
 	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.UpdateMany)
 	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.PatchMany)
+	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.Import)
+	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.Export)
 	router.Register[*setting.Project, *setting.Project, *setting.Project](router.API(), "setting/project", consts.Create)
 	router.Register[*setting.Project, *setting.Project, *setting.Project](router.API(), "setting/project", consts.Delete)
 	router.Register[*setting.Project, *setting.Project, *setting.Project](router.API(), "setting/project", consts.Update)
