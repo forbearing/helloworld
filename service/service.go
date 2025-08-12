@@ -10,8 +10,15 @@ import (
 
 func Init() error {
 	service.Register[*group.Creator](consts.PHASE_CREATE)
+	service.Register[*group.Deleter](consts.PHASE_DELETE)
+	service.Register[*group.Updater](consts.PHASE_UPDATE)
+	service.Register[*group.Patcher](consts.PHASE_PATCH)
 	service.Register[*group.Lister](consts.PHASE_LIST)
 	service.Register[*group.Getter](consts.PHASE_GET)
+	service.Register[*group.ManyCreator](consts.PHASE_CREATE_MANY)
+	service.Register[*group.ManyDeleter](consts.PHASE_DELETE_MANY)
+	service.Register[*group.ManyUpdater](consts.PHASE_UPDATE_MANY)
+	service.Register[*group.ManyPatcher](consts.PHASE_PATCH_MANY)
 	service.Register[*user.Creator](consts.PHASE_CREATE)
 	service.Register[*user.Deleter](consts.PHASE_DELETE)
 	service.Register[*user.Updater](consts.PHASE_UPDATE)

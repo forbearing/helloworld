@@ -28,10 +28,11 @@ func (g *Group) MarshalLogObject(enc zapcore.ObjectEncoder) error {
 type GroupReq struct {
 	Name string `json:"name,omitempty" schema:"name"`
 }
-type GroupResp struct {
-	NameCustom string `json:"custom_name,omitempty" schema:"custom_name"`
-	DescCustom string `json:"custom_desc,omitempty" schema:"custom_desc"`
-	Count      string `json:"custom_count,omitempty" schema:"custom_count"`
+type GroupRsp struct {
+	NameCustom string   `json:"custom_name,omitempty" schema:"custom_name"`
+	DescCustom string   `json:"custom_desc,omitempty" schema:"custom_desc"`
+	Count      int      `json:"custom_count,omitempty" schema:"custom_count"`
+	Deleted    []*Group `json:"deleted,omitempty"`
 }
 
 func (Group) Design() {
@@ -39,36 +40,36 @@ func (Group) Design() {
 
 	Create(func() {
 		Enabled(true)
-		// Payload[GroupReq]()
-		// Result[GroupResp]()
+		Payload[*GroupReq]()
+		Result[GroupRsp]()
 	})
-	// Delete(func() {
-	// 	Enabled(true)
-	// })
-	// Update(func() {
-	// 	Enabled(true)
-	// })
-	// Patch(func() {
-	// 	Enabled(true)
-	// })
+	Delete(func() {
+		Enabled(true)
+		Payload[*GroupReq]()
+		Result[*GroupRsp]()
+	})
+	Update(func() {
+		Enabled(true)
+	})
+	Patch(func() {
+		Enabled(true)
+	})
 	List(func() {
 		Enabled(true)
 	})
 	Get(func() {
 		Enabled(true)
 	})
-
-	// CreateMany(func() {
-	// 	Enabled(true)
-	// })
-
-	// DeleteMany(func() {
-	// 	Enabled(true)
-	// })
-	// UpdateMany(func() {
-	// 	Enabled(true)
-	// })
-	// PatchMany(func() {
-	// 	Enabled(true)
-	// })
+	CreateMany(func() {
+		Enabled(true)
+	})
+	DeleteMany(func() {
+		Enabled(true)
+	})
+	UpdateMany(func() {
+		Enabled(true)
+	})
+	PatchMany(func() {
+		Enabled(true)
+	})
 }
