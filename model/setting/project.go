@@ -16,4 +16,10 @@ func (Project) Design() {
 	Create(func() {
 		Enabled(true)
 	})
+	Update(func() {
+		Enabled(true)
+	})
+	Delete(func() {
+		Enabled(true)
+	})
 }

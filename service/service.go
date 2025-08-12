@@ -3,6 +3,7 @@ package service
 import (
 	"helloworld/service/group"
 	"helloworld/service/setting/project"
+	"helloworld/service/setting/region"
 	"helloworld/service/user"
 
 	"github.com/forbearing/golib/service"
@@ -21,6 +22,10 @@ func Init() error {
 	service.Register[*group.ManyUpdater](consts.PHASE_UPDATE_MANY)
 	service.Register[*group.ManyPatcher](consts.PHASE_PATCH_MANY)
 	service.Register[*project.Creator](consts.PHASE_CREATE)
+	service.Register[*project.Deleter](consts.PHASE_DELETE)
+	service.Register[*project.Updater](consts.PHASE_UPDATE)
+	service.Register[*region.Creator](consts.PHASE_CREATE)
+	service.Register[*region.Lister](consts.PHASE_LIST)
 	service.Register[*user.Creator](consts.PHASE_CREATE)
 	service.Register[*user.Deleter](consts.PHASE_DELETE)
 	service.Register[*user.Updater](consts.PHASE_UPDATE)
