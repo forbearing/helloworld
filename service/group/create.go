@@ -10,10 +10,10 @@ import (
 )
 
 type Creator struct {
-	service.Base[*model.Group, *model.Group, *model.Group]
+	service.Base[*model.Group, *model.GroupReq, *model.GroupRsp]
 }
 
-func (g *Creator) Create(ctx *types.ServiceContext, req *model.Group) (rsp *model.Group, err error) {
+func (g *Creator) Create(ctx *types.ServiceContext, req *model.GroupReq) (rsp *model.GroupRsp, err error) {
 	g.Logger.Info("group create")
 	if err := database.Database[*model.Group]().Create(&model.Group{Name: req.Name}); err != nil {
 		return rsp, err
