@@ -50,6 +50,8 @@ func (Group) Design() {
 	})
 	Update(func() {
 		Enabled(true)
+		Payload[*GroupReq]()
+		Result[*GroupRsp]()
 	})
 	Patch(func() {
 		Enabled(true)

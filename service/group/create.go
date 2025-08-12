@@ -2,7 +2,6 @@ package group
 
 import (
 	"fmt"
-
 	"helloworld/model"
 
 	"github.com/forbearing/golib/database"

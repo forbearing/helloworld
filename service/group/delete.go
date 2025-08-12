@@ -17,15 +17,10 @@ func (g *Deleter) Delete(ctx *types.ServiceContext, req *model.GroupReq) (rsp *m
 	if err = database.Database[*model.Group]().WithQuery(&model.Group{Name: req.Name}).List(&list); err != nil {
 		return nil, err
 	}
-
 	if err = database.Database[*model.Group]().WithPurge(true).Delete(list...); err != nil {
 		return nil, err
 	}
-
-	rsp = &model.GroupRsp{
-		Deleted: list,
-	}
-
+	rsp = &model.GroupRsp{Deleted: list}
 	return rsp, nil
 }
 

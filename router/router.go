@@ -10,7 +10,7 @@ import (
 func Init() error {
 	router.Register[*model.Group, *model.GroupReq, *model.GroupRsp](router.API(), "group", consts.Create)
 	router.Register[*model.Group, *model.GroupReq, *model.GroupRsp](router.API(), "group", consts.Delete)
-	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.Update)
+	router.Register[*model.Group, *model.GroupReq, *model.GroupRsp](router.API(), "group", consts.Update)
 	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.Patch)
 	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.List)
 	router.Register[*model.Group, *model.Group, *model.Group](router.API(), "group", consts.Get)

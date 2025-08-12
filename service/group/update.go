@@ -5,15 +5,18 @@ import (
 
 	"github.com/forbearing/golib/service"
 	"github.com/forbearing/golib/types"
+	"github.com/kr/pretty"
 )
 
 type Updater struct {
-	service.Base[*model.Group, *model.Group, *model.Group]
+	service.Base[*model.Group, *model.GroupReq, *model.GroupRsp]
 }
 
-func (g *Updater) Update(ctx *types.ServiceContext, req *model.Group) (rsp *model.Group, err error) {
+func (g *Updater) Update(ctx *types.ServiceContext, req *model.GroupReq) (rsp *model.GroupRsp, err error) {
 	log := g.WithServiceContext(ctx, ctx.GetPhase())
+
 	log.Info("group update")
+	pretty.Println(req)
 	return rsp, nil
 }
 
