@@ -4,7 +4,10 @@ go 1.24.2
 
 require (
 	github.com/forbearing/golib v0.6.2
+	github.com/gin-gonic/gin v1.10.1
 	github.com/kr/pretty v0.3.1
+	github.com/pquerna/otp v1.5.0
+	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
 	go.uber.org/zap v1.27.0
 	gorm.io/datatypes v1.2.6
 )
@@ -25,6 +28,7 @@ require (
 	github.com/arl/statsviz v0.6.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bmatcuk/doublestar/v4 v4.7.1 // indirect
+	github.com/boombuler/barcode v1.0.1-0.20190219062509-6c824513bacc // indirect
 	github.com/bradfitz/gomemcache v0.0.0-20250403215159-8d39553ac7cf // indirect
 	github.com/bytedance/sonic v1.13.2 // indirect
 	github.com/bytedance/sonic/loader v0.2.4 // indirect
@@ -60,7 +64,6 @@ require (
 	github.com/gin-contrib/gzip v1.2.3 // indirect
 	github.com/gin-contrib/sse v1.1.0 // indirect
 	github.com/gin-contrib/zap v1.1.5 // indirect
-	github.com/gin-gonic/gin v1.10.1 // indirect
 	github.com/glebarez/go-sqlite v1.22.0 // indirect
 	github.com/glebarez/sqlite v1.11.0 // indirect
 	github.com/go-asn1-ber/asn1-ber v1.5.8-0.20250403174932-29230038a667 // indirect

@@ -6,6 +6,8 @@ import (
 	"helloworld/service/group"
 	"helloworld/service/setting/project"
 	"helloworld/service/setting/region"
+	"helloworld/service/twofa/setup"
+	"helloworld/service/twofa/verify"
 	"helloworld/service/user"
 
 	"github.com/forbearing/golib/service"
@@ -32,6 +34,8 @@ func Init() error {
 	service.Register[*project.Updater](consts.PHASE_UPDATE)
 	service.Register[*region.Creator](consts.PHASE_CREATE)
 	service.Register[*region.Lister](consts.PHASE_LIST)
+	service.Register[*setup.Lister](consts.PHASE_LIST)
+	service.Register[*verify.Creator](consts.PHASE_CREATE)
 	service.Register[*user.Creator](consts.PHASE_CREATE)
 	service.Register[*user.Deleter](consts.PHASE_DELETE)
 	service.Register[*user.Updater](consts.PHASE_UPDATE)

@@ -4,6 +4,7 @@ import (
 	"helloworld/model"
 	"helloworld/model/cmdb"
 	"helloworld/model/setting"
+	"helloworld/model/twofa"
 
 	"github.com/forbearing/golib/router"
 	"github.com/forbearing/golib/types/consts"
@@ -29,6 +30,8 @@ func Init() error {
 	router.Register[*setting.Project, *setting.Project, *setting.Project](router.API(), "setting/project", consts.Update)
 	router.Register[*setting.Region, *setting.Region, *setting.Region](router.API(), "setting/region", consts.Create)
 	router.Register[*setting.Region, *setting.Region, *setting.Region](router.API(), "setting/region", consts.List)
+	router.Register[*twofa.Setup, *twofa.Setup, *twofa.SetupRsp](router.API(), "twofa/setup", consts.List)
+	router.Register[*twofa.Verify, *twofa.VerifyReq, *twofa.Verify](router.API(), "twofa/verify", consts.Create)
 	router.Register[*model.User, *model.User, *model.User](router.API(), "user", consts.Create)
 	router.Register[*model.User, *model.User, *model.User](router.API(), "user", consts.Delete)
 	router.Register[*model.User, *model.User, *model.User](router.API(), "user", consts.Update)
