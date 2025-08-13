@@ -2,10 +2,9 @@ package setup
 
 import (
 	"errors"
-	"net/http"
-
 	"helloworld/model/twofa"
 	svc_twofa "helloworld/service/twofa"
+	"net/http"
 
 	"github.com/forbearing/golib/service"
 	"github.com/forbearing/golib/types"
