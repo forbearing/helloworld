@@ -4,7 +4,6 @@ go 1.24.2
 
 require (
 	github.com/forbearing/golib v0.6.2
-	github.com/gin-gonic/gin v1.10.1
 	github.com/kr/pretty v0.3.1
 	github.com/pquerna/otp v1.5.0
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
@@ -64,6 +63,7 @@ require (
 	github.com/gin-contrib/gzip v1.2.3 // indirect
 	github.com/gin-contrib/sse v1.1.0 // indirect
 	github.com/gin-contrib/zap v1.1.5 // indirect
+	github.com/gin-gonic/gin v1.10.1 // indirect
 	github.com/glebarez/go-sqlite v1.22.0 // indirect
 	github.com/glebarez/sqlite v1.11.0 // indirect
 	github.com/go-asn1-ber/asn1-ber v1.5.8-0.20250403174932-29230038a667 // indirect

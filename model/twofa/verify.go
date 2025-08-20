@@ -18,6 +18,6 @@ func (Verify) Design() {
 	Migrate(false)
 	Create(func() {
 		Enabled(true)
-		Payload[VerifyReq]()
+		Payload[*VerifyReq]()
 	})
 }

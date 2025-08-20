@@ -13,10 +13,10 @@ import (
 )
 
 type Lister struct {
-	service.Base[*twofa.Setup, *twofa.Setup, *twofa.SetupRsp]
+	service.Base[*twofa.Setup, *twofa.Setup, twofa.SetupRsp]
 }
 
-func (s *Lister) List(ctx *types.ServiceContext, req *twofa.Setup) (rsp *twofa.SetupRsp, err error) {
+func (s *Lister) List(ctx *types.ServiceContext, req *twofa.Setup) (rsp twofa.SetupRsp, err error) {
 	if err = generate2FA(ctx); err != nil {
 		return
 	}

@@ -2,6 +2,7 @@ package group
 
 import (
 	"fmt"
+
 	"helloworld/model"
 
 	"github.com/forbearing/golib/database"
@@ -10,15 +11,15 @@ import (
 )
 
 type Creator struct {
-	service.Base[*model.Group, *model.GroupReq, *model.GroupRsp]
+	service.Base[*model.Group, *model.GroupReq, model.GroupRsp]
 }
 
-func (g *Creator) Create(ctx *types.ServiceContext, req *model.GroupReq) (rsp *model.GroupRsp, err error) {
+func (g *Creator) Create(ctx *types.ServiceContext, req *model.GroupReq) (rsp model.GroupRsp, err error) {
 	g.Logger.Info("group create")
 	if err := database.Database[*model.Group]().Create(&model.Group{Name: req.Name}); err != nil {
 		return rsp, err
 	}
-	rsp = &model.GroupRsp{NameCustom: req.Name, DescCustom: "haha", Count: 1}
+	rsp = model.GroupRsp{NameCustom: req.Name, DescCustom: "haha", Count: 1}
 	return rsp, nil
 }
 
