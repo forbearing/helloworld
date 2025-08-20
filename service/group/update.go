@@ -5,7 +5,6 @@ import (
 
 	"github.com/forbearing/golib/service"
 	"github.com/forbearing/golib/types"
-	"github.com/kr/pretty"
 )
 
 type Updater struct {
@@ -15,7 +14,6 @@ type Updater struct {
 func (g *Updater) Update(ctx *types.ServiceContext, req *model.GroupReq) (rsp *model.GroupRsp, err error) {
 	log := g.WithServiceContext(ctx, ctx.GetPhase())
 	log.Info("group update")
-	pretty.Println(req)
 	return rsp, nil
 }
 

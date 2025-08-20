@@ -12,8 +12,8 @@ type Importer struct {
 	service.Base[*model.Group, *model.Group, *model.Group]
 }
 
-func (g *Importer) Import(ctx *types.ServiceContext, reader io.Reader) ([]*model.Group, error) {
+func (g *Importer) Import(ctx *types.ServiceContext, reader io.Reader) (groups []*model.Group, err error) {
 	log := g.WithServiceContext(ctx, ctx.GetPhase())
 	log.Info("group import")
-	return nil, nil
+	return groups, err
 }

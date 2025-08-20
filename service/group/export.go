@@ -11,8 +11,8 @@ type Exporter struct {
 	service.Base[*model.Group, *model.Group, *model.Group]
 }
 
-func (g *Exporter) Export(ctx *types.ServiceContext, data ...*model.Group) ([]byte, error) {
+func (g *Exporter) Export(ctx *types.ServiceContext, data ...*model.Group) (data []byte, err error) {
 	log := g.WithServiceContext(ctx, ctx.GetPhase())
 	log.Info("group export")
-	return nil, nil
+	return data, err
 }

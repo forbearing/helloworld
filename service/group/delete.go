@@ -3,7 +3,6 @@ package group
 import (
 	"helloworld/model"
 
-	"github.com/forbearing/golib/database"
 	"github.com/forbearing/golib/service"
 	"github.com/forbearing/golib/types"
 )
@@ -13,14 +12,8 @@ type Deleter struct {
 }
 
 func (g *Deleter) Delete(ctx *types.ServiceContext, req *model.GroupReq) (rsp *model.GroupRsp, err error) {
-	list := make([]*model.Group, 0)
-	if err = database.Database[*model.Group]().WithQuery(&model.Group{Name: req.Name}).List(&list); err != nil {
-		return nil, err
-	}
-	if err = database.Database[*model.Group]().WithPurge(true).Delete(list...); err != nil {
-		return nil, err
-	}
-	rsp = &model.GroupRsp{Deleted: list}
+	log := g.WithServiceContext(ctx, ctx.GetPhase())
+	log.Info("group delete")
 	return rsp, nil
 }
 
